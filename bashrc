@@ -17,6 +17,9 @@ alias ryujinx="~/Games/Ryujinx/Ryujinx.sh"
 alias editbashrc="nvim ~/dotfiles/bashrc && source ~/dotfiles/bashrc"
 alias editnvim="cd ~/dotfiles/nvim && nvim && cd -"
 alias cdi="__zoxide_zi"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
 # }}}
 
 # Functions {{{
@@ -28,6 +31,9 @@ cd() {
     if [ "$(ls | wc -c)" -le "$(tput cols)" ]; then
         ls
     fi
+}
+-() {
+    cd -
 }
 mk() {
   mkdir -p "$1" && cd "$1"
@@ -43,10 +49,6 @@ PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\[\e[38;5;243m\]$?\[\e[0m\]
 eval "$(zoxide init bash --no-cmd)"
 # fzf
 eval "$(fzf --bash)"
-
-# Use bash-completion, if available
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
-    . /usr/share/bash-completion/bash_completion
 
 # History
 export HISTCONTROL=eradedups:ignorespace
