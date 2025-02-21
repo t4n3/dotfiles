@@ -25,7 +25,7 @@ keymap.set("i", "<C-k>", "<Up>")
 keymap.set("i", "<C-l>", "<Right>")
 
 -- Splits
-keymap.set("n", "<leader>7", ":vsplit<CR>", { desc = "Vertical split" })
+keymap.set("n", "<leader>_", ":vsplit<CR>", { desc = "Vertical split" })
 keymap.set("n", "<leader>-", ":split<CR>", { desc = "Horizontal split" })
 
 keymap.set("n", "<Esc>", ":nohlsearch<CR>")

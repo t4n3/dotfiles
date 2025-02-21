@@ -5,6 +5,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
         "folke/neodev.nvim",
+        "ziglang/zig.vim",
 	},
 	config = function()
         -- Setup neodev before lspconfig
@@ -68,6 +69,14 @@ return {
 
 		-- used to enable autocompletion (assign to every lsp server config)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
+
+        -- ZIG
+        vim.g.zig_fmt_autosave = 0
+        lspconfig.zls.setup {
+            capabilities = capabilities,
+            on_attach = on_attach,
+        }
+
 
 		-- Change the Diagnostic symbols in the sign column (gutter)
 		-- (not in youtube nvim video)
